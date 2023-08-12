@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cars</title>
+    <head>
+        <meta charset="utf-8">
+        <title>Стилизаци таблиц в CSS3</title>
+        <style>
+            table {
+                border: solid 2px black;
+                border-collapse: collapse;
+                background: lightgray;
+            }
+
+            th{
+                border: solid 2px black;
+                padding: 10px;
+                background: lightslategray;
+            }
+
+            td{
+                border: solid 1px black;
+                padding: 10px;
+            }
+        </style>
+    </head>
+<body>
+<table class="collapsed">
+    <thead>
+    <tr>
+        <th scope="col">Model</th>
+        <th scope="col">Color</th>
+        <th scope="col">Age</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="car : ${cars}">
+        <td th:text="${car.getModel()}"></td>
+        <td th:text="${car.getColor()}"></td>
+        <td th:text="${car.getAge()}"></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
